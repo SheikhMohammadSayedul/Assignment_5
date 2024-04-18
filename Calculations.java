@@ -5,8 +5,6 @@
 // 4. Sum of all odd numbers between a and b (inclusive), here a and b are user inputs.
 // 5. Sum of all odd digits of an input number.
 
-import java.util.Scanner;
-
 public class Calculations
 {
     // returns sum of all even numbers between 2 to 100 (inclusive)
@@ -60,19 +58,8 @@ public class Calculations
 
 
     // returns sum of all odd numbers between a and b. Here a and b are user inputs.
-    public Long sumOfOddNumbers()
+    public Long sumOfOddNumbers(Long a, Long b)
     {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("\n\tCalulator of sum of odd numbers in a given range.\n");
-
-        // taking input.
-        Long a,b;
-        System.out.print("\tEnter start point: ");
-        a = sc.nextLong();
-        System.out.print("\tEnter ending point: ");
-        b = sc.nextLong();
-
         // calculating sum of odd numbers.
         Long result = 0L;
 
@@ -89,17 +76,8 @@ public class Calculations
 
 
     // returns sum of all odd digits of an input.
-    public Long sumOfOddDigits()
+    public Long sumOfOddDigits(Long number)
     {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("\n\tCalulator of sum of odd digits from a number.\n");
-
-        // taking input from user.
-        Long number;
-        System.out.print("\tEnter a number: ");
-        number = sc.nextLong();
-
         // calculating sum of all odd digits.
         Long result = 0L;
 
@@ -119,13 +97,8 @@ public class Calculations
     }
 
     // option displayer of the program.
-    // returns the option which user choosed.
-    public int optionDisplay()
+    public void optionDisplay()
     {
-        int option;
-
-        Scanner sc = new Scanner(System.in);
-
         System.out.println("\t\tOption-1 : Sum of all even numbers between 2 and 100 (inclusive).");
         System.out.println("\t\tOption-2 : Sum of all squares between 1 and 100 (inclusive).");
         System.out.println("\t\tOption-3 : All powers of 2 from 2^0 up to 2^20.");
@@ -133,9 +106,5 @@ public class Calculations
         System.out.println("\t\tOption-5 : Sum of all odd digits of an input number.");
         System.out.println("\t\tOption-6 : Exit the program.\n");
 
-        System.out.print("Enter your option: ");
-        option = sc.nextInt();
-
-        return option;
     }
 }

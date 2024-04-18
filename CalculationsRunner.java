@@ -1,15 +1,19 @@
+import java.util.Scanner;
 
 public class CalculationsRunner {
     
     public static void main(String args[])
     {
         Calculations calculations = new Calculations();
+        Scanner sc = new Scanner(System.in);
 
         System.out.println("\n\t\t\t\tWelcome to the program\n");
 
         while(true)
         {
-            int option = calculations.optionDisplay();
+            calculations.optionDisplay();
+            System.out.print("Enter your choice: ");
+            int option = sc.nextInt();
 
 
             if(option == 1)
@@ -31,17 +35,34 @@ public class CalculationsRunner {
             }
             else if(option == 4)
             {
-                Long sumOfOdd = calculations.sumOfOddNumbers();
+                System.out.println("\n\tCalulator of sum of odd numbers in a given range.\n");
+
+                // taking input.
+
+                System.out.print("\tEnter start point: ");
+                Long a = sc.nextLong();
+                System.out.print("\tEnter ending point: ");
+                Long b = sc.nextLong();
+
+                Long sumOfOdd = calculations.sumOfOddNumbers(a,b);
                 System.out.printf("\n\tSum of odd numbers: %d\n\n",sumOfOdd);
             }
             else if(option == 5)
             {
-                Long resultOfOddDigits = calculations.sumOfOddDigits();
+                System.out.println("\n\tCalulator of sum of odd digits from a number.\n");
+
+                // taking input from user.
+
+                System.out.print("\tEnter a number: ");
+                Long number = sc.nextLong();
+
+                Long resultOfOddDigits = calculations.sumOfOddDigits(number);
                 System.out.printf("\n\tSum of odd digits: %d\n\n",resultOfOddDigits);
             }
             else if(option == 6)
             {
                 System.out.println("\n\t\t\t\tThank you for using the program.\n");
+                sc.close();
                 break;
             }
             else

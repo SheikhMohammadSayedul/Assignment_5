@@ -7,6 +7,7 @@ public class WordReverserRunner {
         Scanner sc = new Scanner(System.in);
         WordReverser wordReverser = new WordReverser();
 
+        System.out.print("Enter a string: ");
         String word = sc.next();
 
         System.out.println("Reversed String: " + wordReverser.wordReverse(word));

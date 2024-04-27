@@ -17,5 +17,7 @@ public class CurrencyConverterRunner {
 
         // prints result
         System.out.printf("\nTotal amount in Yen: %.2f\n",currencyConverter.converter(rate, dollar));
+
+        sc.close();
     }
 }

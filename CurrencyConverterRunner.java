@@ -9,14 +9,25 @@ public class CurrencyConverterRunner {
         CurrencyConverter currencyConverter = new CurrencyConverter();
 
         // taking dollar to yen rate.
-        System.out.print("\nEnter Dollar to Yen rate: ");
+        System.out.print("\nEnter today's Dollar to Yen rate: ");
         double rate = sc.nextDouble();
-        System.out.print("Enter Dollar amount: ");
-        double dollar = sc.nextDouble();
 
+        System.out.println("\n\tConverting USD to JPY:\n");
+        while(true)
+        {
+            System.out.print("\nEnter Dollar amount (0 to end): ");
+            double dollar = sc.nextDouble();
 
-        // prints result
-        System.out.printf("\nTotal amount in Yen: %.2f\n",currencyConverter.converter(rate, dollar));
+            if(dollar == 0) 
+            {
+                System.out.print("\n\tThanks for using the program.\n");
+                break;
+            }
+
+            // prints result
+            System.out.printf("$%.2f is equal to %.2f yen\n",dollar,currencyConverter.converter(rate, dollar));
+
+        }
 
         sc.close();
     }
